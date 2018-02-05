@@ -9,7 +9,7 @@ Time spent: **5** hours spent in total
 
 The following **required** user stories are complete:
 
-- [ ] User can scroll through a feed of images returned from the Tumblr API (5pts)
+- [X] User can scroll through a feed of images returned from the Tumblr API (5pts)
 
 The following **stretch** user stories are implemented:
 
@@ -24,14 +24,14 @@ The following **additional** user stories are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. A way to make the app better would be to have a title on each pictuer.
+2. Implementing a boundary around each picture.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://media.giphy.com/media/xThtabieUDx2A5hQVq/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -42,7 +42,7 @@ Had trouble with create an individual photocell.
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright [2018] [Sai Vuppala]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

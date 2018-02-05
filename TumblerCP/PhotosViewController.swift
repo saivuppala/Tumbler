@@ -53,15 +53,16 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         return posts.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    /*func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = "This is row \(indexPath.row)"
         
         return cell
-    }
+    }*/
     
-    private func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath as IndexPath) as! PhotoCellTableViewCell
+        //cell.textLabel?.text = "This is row \(indexPath.row)"
         let post = posts[indexPath.row]
         if let photos = post["photos"] as? [[String: Any]] {
             // photos is NOT nil, we can use it!
