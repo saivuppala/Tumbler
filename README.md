@@ -1,7 +1,7 @@
 
-# Lab 1 - *Tumblr*
+# Lab 1 - *Tumbler*
 
-**Name of your app** is a photo browsing app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
+**Tumbler** is a photo browsing app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
 
 Time spent: **5** hours spent in total
 
