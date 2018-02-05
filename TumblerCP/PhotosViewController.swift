@@ -10,40 +10,7 @@ import UIKit
 import AlamofireImage
 
 class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "This is row \(indexPath.row)"
-        
-        return cell
-    }
-   
-    private func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath as IndexPath) as! PhotoCellTableViewCell
-        let post = posts[indexPath.row]
-        if let photos = post["photos"] as? [[String: Any]] {
-            // photos is NOT nil, we can use it!
-            // TODO: Get the photo url
-            // 1.
-            let photo = photos[0]
-            // 2.
-            let originalSize = photo["original_size"] as! [String: Any]
-            // 3.
-            let urlString = originalSize["url"] as! String
-            // 4.
-            let url = URL(string: urlString)
-            cell.abc.af_setImage(withURL: url!)
-        }
-        
-        
-        
-        // Configure YourCustomCell using the outlets that you've defined.
-        
-        return cell
-    }
     
     @IBOutlet weak var tableView: UITableView!
     var posts: [[String: Any]] = []
@@ -81,6 +48,38 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "This is row \(indexPath.row)"
+        
+        return cell
+    }
+    
+    private func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath as IndexPath) as! PhotoCellTableViewCell
+        let post = posts[indexPath.row]
+        if let photos = post["photos"] as? [[String: Any]] {
+            // photos is NOT nil, we can use it!
+            // TODO: Get the photo url
+            // 1.
+            let photo = photos[0]
+            // 2.
+            let originalSize = photo["original_size"] as! [String: Any]
+            // 3.
+            let urlString = originalSize["url"] as! String
+            // 4.
+            let url = URL(string: urlString)
+            cell.abc.af_setImage(withURL: url!)
+        }
+        
+        // Configure YourCustomCell using the outlets that you've defined.
+        
+        return cell
     }
     
 

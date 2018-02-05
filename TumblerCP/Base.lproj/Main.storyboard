@@ -38,7 +38,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="PhotoCell" destination="lEB-7v-u3o" id="iG0-Mz-xUZ"/>
-                                            <outlet property="image" destination="0H5-ea-6vC" id="C31-CO-pwb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -48,7 +47,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="table" destination="Hjz-Ua-mbI" id="Ug5-xz-5qU"/>
                         <outlet property="tableView" destination="Hjz-Ua-mbI" id="YRO-53-DfC"/>
                     </connections>
                 </viewController>
