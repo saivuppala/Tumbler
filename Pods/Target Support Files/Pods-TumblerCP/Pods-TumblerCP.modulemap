@@ -1,0 +1,6 @@
+framework module Pods_TumblerCP {
+  umbrella header "Pods-TumblerCP-umbrella.h"
+
+  export *
+  module * { export * }
+}
