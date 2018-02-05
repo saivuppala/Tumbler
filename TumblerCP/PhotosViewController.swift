@@ -20,8 +20,9 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         
         return cell
     }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+   
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath as IndexPath) as! PhotoCellTableViewCell
         let post = posts[indexPath.row]
         if let photos = post["photos"] as? [[String: Any]] {
             // photos is NOT nil, we can use it!
@@ -34,12 +35,13 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
             let urlString = originalSize["url"] as! String
             // 4.
             let url = URL(string: urlString)
+            cell.abc.af_setImage(withURL: url!)
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath as IndexPath) as! PhotoCellTableViewCell
+        
         
         // Configure YourCustomCell using the outlets that you've defined.
-        cell.photoImageView.af_setImage(withURL: url!)
+        
         return cell
     }
     
