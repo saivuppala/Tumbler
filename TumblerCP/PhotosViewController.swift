@@ -21,7 +21,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+    private func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath as IndexPath) as! PhotoCellTableViewCell
         let post = posts[indexPath.row]
         if let photos = post["photos"] as? [[String: Any]] {
