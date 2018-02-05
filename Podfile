@@ -7,6 +7,7 @@ target 'TumblerCP' do
 
   # Pods for TumblerCP
  pod 'Alamofire', '~> 4.4'
+pod 'AlamofireImage'
   target 'TumblerCPTests' do
     inherit! :search_paths
     # Pods for testing

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AlamoFireImage
+import AlamofireImage
 
 class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,10 +35,11 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
             // 4.
             let url = URL(string: urlString)
         }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath as IndexPath) as! PhotoCellTableViewCell
         
         // Configure YourCustomCell using the outlets that you've defined.
-        
+        cell.photoImageView.af_setImage(withURL: url!)
         return cell
     }
     
@@ -67,6 +68,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 self.posts = responseDictionary["posts"] as! [[String: Any]]
                 
                 // TODO: Reload the table view
+                self.tableView.reloadData()
             }
         }
         task.resume()
