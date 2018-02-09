@@ -83,6 +83,27 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         
         return cell
     }
+ 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        let vc = segue.destination as! PhotoDetailsViewController
+        
+        let cell = sender as! UITableViewCell
+        let indexPath = self.tableView.indexPath(for: cell)!
+        
+        // Pass the selected object to the new view controller.
+        let currPost = self.posts[indexPath.row]
+        
+        vc.post = currPost as NSDictionary
+        
+    }
+        
+        
+      
+        
+         // => 2
+    }
     
 
     /*
@@ -95,4 +116,4 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     }
     */
 
-}
+
